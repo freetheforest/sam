@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+jQuery Slider
+</title>
+
+<style type="text/css">
+	
+.slider {
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	margin: 30px auto;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	position:center;
+}	
+
+.slider img {
+	width:auto;
+	height:auto;
+	display:none;
+}
+
+</style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+	
+function Slider(){
+	$(".slider #1").fadeIn(800);
+	$(".slider #1").delay(3000).fadeOut(600);
+	
+	var sc = $(".slider img").size();
+	var count = 2;
+	
+	setInterval(function(){
+		$(".slider #" + count).fadeIn(800);
+		$(".slider #" + count).delay(3000).fadeOut(600);
+		
+		if (count == sc){
+			count=1;
+		} else {
+			count++;
+		}	
+	}, 4400);
+
+	
+	
+}
+	
+</script>
+
+</head>	
+
+<body onload="Slider();">
+
+<div class="slider">
+
+	<img id="1" src="images/tracy-profile.jpg" border="0" alt="tracy profile" />
+	<img id="2" src="images/tracy-slide01.jpg" border="0" alt="slide 01" />
+	<img id="3" src="images/tracy-slide02.jpg" border="0" alt="slide 02" />
+	
+	
+	
+</div>	
+
+</body>
+
+
+
+
+
+
+
+</html>
